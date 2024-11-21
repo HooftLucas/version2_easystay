@@ -48,4 +48,12 @@ view: fact_easystay {
   measure: count {
     type: count
   }
+  measure: avg_price {
+    type:  average
+    sql:  ${TABLE}.price ;;
+  }
+  measure: avg_guest {
+    type:  average
+    sql:  ${TABLE}.Guest_satisfaction ;;
+  }
 }

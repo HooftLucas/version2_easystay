@@ -13,21 +13,7 @@ view: dim_room {
     type: number
     sql: ${TABLE}.Bedrooms ;;
   }
-  dimension: cur_ind {
-    type: yesno
-    sql: ${TABLE}.cur_ind ;;
-  }
-  dimension_group: date_start {
-    type: time
-    timeframes: [raw, date, week, month, quarter, year]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}.date_start ;;
-  }
-  dimension: date_stop {
-    type: number
-    sql: ${TABLE}.date_stop ;;
-  }
+
   dimension: dist {
     type: number
     sql: ${TABLE}.dist ;;
