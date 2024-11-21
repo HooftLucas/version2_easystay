@@ -12,7 +12,21 @@ persist_with: easy_stay_lu_version2_default_datagroup
 
 explore: dim_location {}
 
-explore: fact_easystay {}
+
 
 explore: dim_room {}
 
+explore: fact_easystay {
+  join: dim_location {
+    type:  left_outer
+    relationship: one_to_one
+    sql_on: ${fact_easystay.location_id} = ${dim_location.location_id} ;;
+
+  }
+  join: dim_room {
+    type:  left_outer
+    relationship: : one_to_many
+    sql_on: ${fact_easystay.room_id} = ${dim_room.room_id} ;;
+
+  }
+}
